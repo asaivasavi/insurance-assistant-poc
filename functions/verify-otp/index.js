@@ -12,7 +12,7 @@ functions.http('verifyOtp', async (req, res) => {
   }
 
   const doc = await db.collection('otp_sessions').doc(policyholder_id).get();
-
+  console.log("OTP session data:", doc);
   if (!doc.exists) {
     return res.json({
       fulfillment_response: {

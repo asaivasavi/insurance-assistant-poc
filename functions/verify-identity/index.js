@@ -42,6 +42,7 @@ functions.http('verifyIdentity', async (req, res) => {
     .where('phone', '==', normalizedPhone)
     .limit(1)
     .get();
+  //console.log("snapshot", snapshot.docs[0].data());
 
   if (snapshot.empty) {
     return res.json({
